@@ -48,6 +48,9 @@ public class Operation {
         Map<String, List<Engineer>> departmentWiseName = engineers.stream().collect(Collectors.groupingBy(Engineer::getDepartment));
         departmentWiseName.forEach((k,v) -> System.out.println(k + " = " + v));
 
+        //10. Find a guy with maximum experience
+        Engineer engineerWithMaxExp = engineers.stream().sorted(Comparator.comparingInt(Engineer::getYearOfJoining)).findFirst().get();
+        System.out.println(engineerWithMaxExp);
 
     }
 }
