@@ -3,6 +3,7 @@ package org.example;
 import java.util.Comparator;
 import java.util.List;
 import java.util.Map;
+import java.util.OptionalDouble;
 import java.util.stream.Collectors;
 
 public class Operation {
@@ -51,6 +52,14 @@ public class Operation {
         //10. Find a guy with maximum experience
         Engineer engineerWithMaxExp = engineers.stream().sorted(Comparator.comparingInt(Engineer::getYearOfJoining)).findFirst().get();
         System.out.println(engineerWithMaxExp);
+        
+        //11. Find average salary of male Enginner
+
+        double averageMaleSal = engineers.stream()
+                .filter(e -> e.getGender().equals("Male"))
+                .mapToDouble(Engineer::getSalary)
+                .average().getAsDouble();
+        System.out.println(averageMaleSal);
 
     }
 }
