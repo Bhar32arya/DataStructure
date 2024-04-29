@@ -11,11 +11,15 @@ public class IntegerFrequency {
         Map<Integer, Integer> map = new LinkedHashMap<>();
 
         for(int key : arr) {
-            if(map.containsKey(map.get(key))) {
+            if(map.containsKey(key)) {
                 map.put(key, map.get(key) + 1);
             } else {
                 map.put(key, 1);
             }
+        }
+
+        for(Map.Entry<Integer, Integer> itr : map.entrySet()) {
+            System.out.println(itr.getKey() + " == " + itr.getValue());
         }
 
         String text = "bhar32arya";
@@ -30,7 +34,7 @@ public class IntegerFrequency {
         }
         
         List<Integer> numbers = Arrays.asList(10, 20, 20, 10, 10, 20, 5, 20); // Sample list of integers
-        Map<Integer, Long> collect = numbers.stream().collect(Collectors.groupingBy(i -> i, Collectors.counting()));
+        Map<Integer, Long> collect = numbers.stream().collect(Collectors.groupingBy(i -> i, LinkedHashMap::new, Collectors.counting()));
 
         collect.forEach((k,v) -> System.out.println(k + " = " +v));
     }
