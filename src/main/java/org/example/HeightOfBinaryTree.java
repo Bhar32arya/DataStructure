@@ -14,11 +14,10 @@ class Node {
 public class HeightOfBinaryTree {
 
     public static int height(Node root) {
-        if (root == null) {
-            return 0;
-        } else {
+        if(root != null) {
             return 1 + Math.max(height(root.left), height(root.right));
         }
+        return 0;
     }
 
     public static void main(String[] args) {

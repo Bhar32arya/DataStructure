@@ -1,5 +1,7 @@
 package org.example;
 
+import java.util.Arrays;
+
 public class MoveZeroWithOrder {
     public static void main(String[] args) {
         int arr[] = new int[]{0,2,0,0,3,14};
@@ -15,9 +17,7 @@ public class MoveZeroWithOrder {
                 end++;
             }
         }
-        for(int i : arr) {
-            System.out.print(i);
-        }
+        System.out.println(Arrays.toString(arr));
     }
 
     private static void swap(int[] arr, int start, int end) {
