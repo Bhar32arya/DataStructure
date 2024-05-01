@@ -1,5 +1,4 @@
 package org.example;
-import java.util.LinkedList;
 
 public class ReverseLinkedList {
 
@@ -31,7 +30,9 @@ public class ReverseLinkedList {
 
             while (current != null) {
                 Node nextNode = current.right;
+
                 current.right = prev;
+
                 prev = current;
                 current = nextNode;
             }
