@@ -4,25 +4,28 @@ import java.util.Arrays;
 
 public class MoveZeroWithOrder {
     public static void main(String[] args) {
-        int arr[] = new int[]{0,2,0,0,3,14};
+        int arr[] = new int[]{0, 2, 0, 0, 3, 14};
 
-        int start = 0;
-        int end = 0;
-        while (end < arr.length) {
-            if(arr[end] == 0) {
-                end++;
-            } else {
-                swap(arr, start ,end);
-                start++;
-                end++;
+        System.out.println(Arrays.toString(arr));
+        int left = 0;
+        int right = 1;
+
+        while(right < arr.length) {
+            if(arr[left] == 0 && arr[right] != 0) {
+                swap(arr, left, right);
+                left++;
+                right++;
+            }
+            if(right < arr.length && arr[right] == 0) {
+                right++;
             }
         }
         System.out.println(Arrays.toString(arr));
     }
 
-    private static void swap(int[] arr, int start, int end) {
-        int temp = arr[start];
-        arr[start] = arr[end];
-        arr[end] = temp;
+    private static void swap(int[] arr, int left, int right) {
+        int tmp = arr[left];
+        arr[left] = arr[right];
+        arr[right] = tmp;
     }
 }
