@@ -1,9 +1,8 @@
 package org.example;
 
 import java.util.Arrays;
-import java.util.Comparator;
 
-public class SecoendLargestElement {
+public class SecondLargestElement {
     public static void main(String[] args) {
         int arr[] = new int[]{50,23,7,12,8};
 
