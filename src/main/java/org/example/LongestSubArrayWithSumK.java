@@ -1,35 +1,21 @@
 package org.example;
 
-import java.util.HashMap;
-
 public class LongestSubArrayWithSumK {
-
-    public static int longestSubArrayWithSumK(int[] nums, int k) {
-        HashMap<Integer, Integer> map = new HashMap<>();
-        int maxLength = 0;
-        int sum = 0;
-
-        for (int i = 0; i < nums.length; i++) {
-            sum = sum + nums[i];
-            if (sum == k) {
-                maxLength = i + 1;
-            }
-            else {
-                if (map.containsKey(sum - k)) {
-                    maxLength = Math.max(maxLength, i - map.get(sum - k));
-                }
-            }
-            if (!map.containsKey(sum)) {
-                map.put(sum, i);
-            }
-        }
-        return maxLength;
+    public static void main(String[] args) {
+        int arr[] = new int[]{-2,1,-3,4,-1,2,1,-5,4};
+        System.out.println(maxSubArray(arr));
     }
 
-    public static void main(String[] args) {
-        int[] nums = {10, 5, 2, 7, 1, 9};
-        int k = 15;
-        System.out.println("Length of the longest subarray with sum " + k + " is: " + longestSubArrayWithSumK(nums, k));
+    public static int maxSubArray(int[] nums) {
+        int maxSum = nums[0];
+        int currentSum = nums[0];
+
+        for (int i = 1; i < nums.length; i++) {
+            currentSum = Math.max(nums[i], currentSum + nums[i]);
+            maxSum = Math.max(maxSum, currentSum);
+        }
+
+        return maxSum;
     }
 }
 
