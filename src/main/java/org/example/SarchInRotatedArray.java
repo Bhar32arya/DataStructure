@@ -4,10 +4,9 @@ import java.util.Arrays;
 
 public class SarchInRotatedArray {
     public static void main(String[] args) {
-        SarchInRotatedArray sarchInRotatedArray = new SarchInRotatedArray();
-        System.out.println(sarchInRotatedArray.search(new int[]{4,5,6,7,0,1,2}, 7));
+        System.out.println(search(new int[]{4,5,6,7,0,1,2}, 7));
     }
-        public int search(int[] nums, int target) {
+        public static int search(int[] nums, int target) {
             int res = 0;
             if(nums.length == 0) {
                 return -1;
@@ -23,7 +22,7 @@ public class SarchInRotatedArray {
             return res;
         }
 
-    private int binarySearch(int[] nums, int target, int start, int end) {
+    private static int binarySearch(int[] nums, int target, int start, int end) {
         int mid = start + (end - start)/2;
         if(nums[mid] == target) {
             return mid;
