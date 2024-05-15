@@ -4,7 +4,7 @@ import java.util.Arrays;
 
 public class MoveZeroWithOrder {
     public static void main(String[] args) {
-        int arr[] = new int[]{0, 2, 0, 0, 3, 14};
+        int[] arr = new int[]{0, 2, 0, 0, 3, 14};
 
         System.out.println(Arrays.toString(arr));
         int left = 0;

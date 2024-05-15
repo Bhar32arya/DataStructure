@@ -9,7 +9,7 @@ public class ValidWord {
 
         String str = "How ma5rn ar$ valid word ww";
         int count = 0;
-        for(String input : str.split(" ")) {
+        for(String input : str.split("\\s")) {
             if(isValid(input.toLowerCase())) {
                 System.out.println(input);
                 count++;
